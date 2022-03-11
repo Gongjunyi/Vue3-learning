@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array.from()的⽤法</title>
+  </head>
+  <body>
+    <script>
+      let playersObje = { 0: 'curry', 1: 'james', 2: 'kobe', length: 3 }
+      let players = Array.from(playersObje)
+      console.log(players) //["curry", "james", "kobe"]
+      let playersSet = new Set(['curry', 'james', 'curry'])
+      players = Array.from(playersSet)
+      console.log(players) //["curry", "james"],Set可以去重
+    </script>
+  </body>
+</html>
