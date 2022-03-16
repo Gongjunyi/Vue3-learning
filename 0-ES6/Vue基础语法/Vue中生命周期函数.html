@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = Vue.createApp({
+          data() {
+            return {
+              message: 'hello world',
+            }
+          },
+          // 在Vue 实例生成之后会自动执行的函数
+          beforeCreate(){
+              console.log('beforeCreate',this.message);
+          },
+          // 在 Vue 实例生成之后会自动执行的函数
+          created(){
+              console.log('created',doucment.getElementById('root').innerHTML,this.message);
+          },
+          //在组件内容被渲染到页面之前自动执行的函数
+    </script>
+  </body>
+</html>

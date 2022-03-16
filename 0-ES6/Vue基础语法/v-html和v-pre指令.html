@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <!-- 错误的做法 -->
+        <li>{{age}}</li>
+        <li>{{link}}</li>
+        <!-- 正确的做法 -->
+        <li v-html="age"></li>
+        <li v-html="link"></li>
+      </ul>
+      <!-- 错误的做法 -->
+      <div>Vue真有趣，特别是{{Mustache}}表达式</div>
+      <!-- 正确的做法 -->
+    </div>
+  </body>
+</html>

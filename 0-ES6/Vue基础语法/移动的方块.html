@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移动的方块</title>
+    <style>
+      #app {
+        width: 80vw;
+        height: 800px;
+        margin: 0 auto;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="box"></div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: { left: 0, top: 0 },
+        mounted() {
+          document.addEventListener('keydown', (e) => {
+            switch (e.keyCode) {
+              case 38: //上
+                this.top -= 10
+                break
+              case 40: //下
+                this.top += 10
+                break
+              case 37: //左
+                this.left -= 10
+                break
+              case 39: //右
+                this.left += 10
+                break
+            }
+            console.log(e.keyCode)
+          })
+        },
+      })
+    </script>
+  </body>
+</html> -->
+
+<meta charset="utf-8" />
+<style>
+  div.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: solid 1px #ccc;
+    display: inline-block;
+  }
+</style>
+<div id="app">
+  <div class="item" v-bind:style="{ left: left + 'px', top: top + 'px' }"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: { left: 0, top: 0 },
+    mounted() {
+      document.addEventListener('keydown', (e) => {
+        switch (e.keyCode) {
+          case 38: //上
+            this.top -= 10
+            break
+          case 40: //下
+            this.top += 10
+            break
+          case 37: //左
+            this.left -= 10
+            break
+          case 39: //右
+            this.left += 10
+            break
+        }
+        console.log(e.keyCode)
+      })
+    },
+  })
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [v-clock] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <h2 v-cloak>当前counter:{{counter}}</h2>
+      <!-- <button @click="counter++">增加</button>
+      <button @click="counter--">减少</button> -->
+
+      <!-- <button @click="increasement(step)">增加</button>
+      <button @click="decreasement(step)">减少</button> -->
+
+      <button @click="decreasement(step,$event)">减少</button>
+
+      <script src="https://unpkg.com/vue@next"></script>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            counter: 0,
+            step: 2,
+          }
+        },
+        methods: {
+          increasement(n) {
+            this.counter = this.counter + n
+          },
+          decreasement(n, event) {
+            this.counter = this.counter - n
+            console.log(event)
+          },
+        },
+      })
+      const vm = app.mount('#root')
+    </script>
+  </body>
+</html>
